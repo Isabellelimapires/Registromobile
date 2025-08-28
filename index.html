@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoPlanner – Tarefas Sustentáveis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar" role="banner">
+    <div class="container">
+      <h1 class="app-title">EcoPlanner</h1>
+    </div>
+  </header>
+
+  <main id="conteudo" class="main" role="main">
+    <section aria-labelledby="tituloNovaTarefa" class="panel">
+      <h2 id="tituloNovaTarefa">Nova tarefa</h2>
+      <form id="formTarefa">
+        <label for="titulo">Título</label>
+        <input id="titulo" name="titulo" required />
+
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecione…</option>
+          <option value="casa">Casa</option>
+          <option value="trabalho">Trabalho</option>
+          <option value="estudos">Estudos</option>
+        </select>
+
+        <label for="prazo">Prazo</label>
+        <input id="prazo" name="prazo" type="date" />
+
+        <fieldset>
+          <legend>Prioridade</legend>
+          <label><input type="radio" name="prioridade" value="baixa" checked /> Baixa</label>
+          <label><input type="radio" name="prioridade" value="media" /> Média</label>
+          <label><input type="radio" name="prioridade" value="alta" /> Alta</label>
+        </fieldset>
+
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="tituloLista" class="panel">
+      <h2 id="tituloLista">Minhas tarefas</h2>
+      <ul id="listaTarefas"></ul>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>© 2025 SustentaApp – EcoPlanner</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style class="css">body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7f8;
+    color: #0b1620;
+  }
+  
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    background: #1f6feb;
+    color: #fff;
+    padding: 0.5rem;
+  }
+  .skip-link:focus {
+    left: 10px;
+  }
+  
+  .topbar {
+    background: #1c7c54;
+    color: #fff;
+    padding: 1rem;
+  }
+  .app-title { margin: 0; }
+  
+  .panel {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #1c7c54;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  button:focus {
+    outline: 3px solid #1f6feb;
+  }
+  
+  ul { list-style: none; padding: 0; }
+  
+  li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Responsividade */
+  @media (min-width: 600px) {
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+  </style>
